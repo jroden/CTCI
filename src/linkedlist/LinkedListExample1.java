@@ -35,6 +35,11 @@ public class LinkedListExample1 {
     }
 
     public LinkedList.Node getHead() {
-        return n1;
+        return linkedList1.head;
+    }
+
+    public void setHead(LinkedList.Node node) {
+        node.next = getHead();
+        linkedList1.head = node;
     }
 }
