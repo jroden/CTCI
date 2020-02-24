@@ -1,8 +1,8 @@
 package linkedlist;
 
-import java.lang.reflect.Array;
-
 public class LinkedListExample1 {
+    // This class represents an example instantiated linkedList for testing/demonstration purposes
+
     int[] linkedListArray = {3,11,4,4,4,4,8,8,8,23,23,23,4,5,7,1,4};
     LinkedList linkedList1 = new LinkedList();
     LinkedList.Node n1 = linkedList1.new Node(3);
@@ -17,11 +17,6 @@ public class LinkedListExample1 {
     LinkedList.Node n10 = linkedList1.new Node(18);
 
     public LinkedListExample1() {
-//        for (int i=0; i<linkedListArray.length; i++) {
-//            LinkedList.Node n = linkedList1.new Node(linkedListArray[i]);
-//
-//        }
-
         linkedList1.head = n1;
         n1.next = n2;
         n2.next = n3;

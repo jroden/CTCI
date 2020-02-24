@@ -1,11 +1,13 @@
 package linkedlist;
 
 public class ReturnKthToLast {
-    // this problem asks us to return the data at node k from the end of a singly linked list
+    // Problem: Return the data at node k from the end of a singly linked list
+    // Solution: Iterate through linked list with two pointers, one is k elements behind the other
+    //  when the first one hits null, we know the second is the kth to last element
+    // Time Complexity: O(n) since we are only looping through the list once
+    // Space Complexity: O(n) since we are only storing the input linkedList
 
     public static void main(String[] args){
-        // iterate through linked list with two pointers, one is k elements behind the other
-        // when the first one hits null, we know the second is the kth to last element
         LinkedListExample1 linkedList = new LinkedListExample1();
         LinkedList.Node n1 = linkedList.getHead();
         LinkedList.Node n2 = linkedList.getHead();

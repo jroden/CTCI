@@ -3,6 +3,12 @@ import java.util.HashMap;
 
 
 public class RemoveDups {
+    // Problem: Remove duplicates from a linkedList
+    // Solution: Loop through the list and use a hashmap to store data values encountered thus far
+    //  if a value has been encountered, remove the node from the list
+    // Time Complexity: O(n) since we are only looping through the list once
+    // Space Complexity: O(n) since we are only storing the input linkedList
+
     public static void main(String[] args) {
         LinkedListExample1 linkedList = new LinkedListExample1();
         LinkedList.Node node = linkedList.getHead();
