@@ -1,6 +1,5 @@
 package linkedlist;
 
-import java.lang.reflect.Array;
 
 public class LinkedList {
     public Node head;
@@ -19,11 +18,22 @@ public class LinkedList {
         Node laggingNode = null;
         for (int i = 0; i < arrayToBeConverted.length; i++) {
             Node n1 = returnLinkedList.new Node(arrayToBeConverted[i]);
-            if (laggingNode not null) {
+            if (laggingNode != null) {
                 laggingNode.next = n1;
             }
+            else { returnLinkedList.head = n1; }
             laggingNode = n1;
         }
-        return
+        return returnLinkedList;
     }
+
+    public static void printLinkedList(LinkedList linkedList) {
+        LinkedList.Node node = linkedList.head;
+        System.out.println("Printing linkedList!");
+        while (node != null) {
+            System.out.println(node.data);
+            node = node.next;
+        }
+    }
+
 }

@@ -1,6 +1,6 @@
 package linkedlist;
 
-import static linkedlist.RemoveDups.printLinkedList;
+import static linkedlist.LinkedList.printLinkedList;
 
 public class Partition {
     // Problem: Write code to partition a linked list around a value x, such that all nodes less than x come before all nodes
@@ -34,6 +34,7 @@ public class Partition {
             n1 = nextNode;
             counter++;
         }
-        printLinkedList(linkedList);
+        // revisit
+//        printLinkedList(linkedList);
     }
 }

@@ -1,5 +1,6 @@
 package linkedlist;
 import java.util.HashMap;
+import static linkedlist.LinkedList.printLinkedList;
 
 
 public class RemoveDups {
@@ -27,17 +28,9 @@ public class RemoveDups {
         }
 
 	    // print linked list for confirmation
-        printLinkedList(linkedList);
+        // revisit
+//        printLinkedList(linkedList);
 
-    }
-
-    public static void printLinkedList(LinkedListExample1 linkedList) {
-        LinkedList.Node node = linkedList.getHead();
-        System.out.println("Printing linkedList!");
-        while (node != null) {
-            System.out.println(node.data);
-            node = node.next;
-        }
     }
 
 }

@@ -1,7 +1,8 @@
 package linkedlist;
+
 import java.util.ArrayList;
 import java.util.List;
-import static linkedlist.RemoveDups.printLinkedList;
+import static linkedlist.LinkedList.printLinkedList;
 
 public class DeleteMiddleNode {
     // Problem: Implement an algorithm to delete a node in the middle of a linked list
@@ -19,7 +20,8 @@ public class DeleteMiddleNode {
             node.data = node.next.data;
             node = node.next;
         }
-        printLinkedList(linkedList);
+        // revisit
+//        printLinkedList(linkedList);
     }
 
     private static List<LinkedList.Node> getMiddleOfLinkedList(LinkedListExample1 linkedList) {
