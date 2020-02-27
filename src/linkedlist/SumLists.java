@@ -1,8 +1,16 @@
 package linkedlist;
+
+import com.sun.tools.javac.util.ArrayUtils;
+
 import static linkedlist.LinkedList.convertArrayToLinkedList;
 import static linkedlist.LinkedList.printLinkedList;
 
 public class SumLists {
+    // Problem:
+    // Solution: Iterate through linked list with two pointers, one is k elements behind the other
+    //  when the first one hits null, we know the second is the kth to last element
+    // Time Complexity: O(n) since we are only looping through the list once
+    // Space Complexity: O(n) since we are only storing the input linkedList
 
     public static void main(String[] args) {
         LinkedList linkedListOne = convertArrayToLinkedList(new int[]{3, 4, 2});
@@ -34,6 +42,19 @@ public class SumLists {
             // break if at the end of both nodes
             if (LL1Node == null && LL2Node == null) { break; }
         }
+        return sumLinkedList;
+    }
+
+    private static LinkedList sumTheListsInStandardOrder(LinkedList linkedListOne, LinkedList linkedListTwo) {
+        // extract linked lists into arrays in reverse order
+        LinkedList.Node LL1Node = linkedListOne.head;
+        int[] LL1Array = {};
+        while (true) {
+            LL1Array = new ArrayUtils.add(LL1Array, 0, LL1Node.data);
+        }
+        LinkedList.Node LL2Node = linkedListTwo.head;
+        LinkedList sumLinkedList = new LinkedList();
+
         return sumLinkedList;
     }
 }
