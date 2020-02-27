@@ -6,12 +6,12 @@ public class LinkedListExample1 {
     int[] linkedListArray = {3,11,4,4,4,4,8,8,8,23,23,23,4,5,7,1,4};
     LinkedList linkedList1 = new LinkedList();
     LinkedList.Node n1 = linkedList1.new Node(3);
-    LinkedList.Node n2 = linkedList1.new Node(11);
+    LinkedList.Node n2 = linkedList1.new Node(1);
     LinkedList.Node n3 = linkedList1.new Node(4);
-    LinkedList.Node n4 = linkedList1.new Node(4);
+    LinkedList.Node n4 = linkedList1.new Node(5);
     LinkedList.Node n5 = linkedList1.new Node(4);
     LinkedList.Node n6 = linkedList1.new Node(8);
-    LinkedList.Node n7 = linkedList1.new Node(8);
+    LinkedList.Node n7 = linkedList1.new Node(3);
     LinkedList.Node n8 = linkedList1.new Node(8);
     LinkedList.Node n9 = linkedList1.new Node(8);
     LinkedList.Node n10 = linkedList1.new Node(18);
