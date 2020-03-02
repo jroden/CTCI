@@ -53,8 +53,8 @@ public class SumLists {
         //  stored in standard order such that the 1's digit is at the end of the list
         //  Solution: Extract both lists into an ArrayList, determine the length difference between the two arrays,
         //  and loop through arrays starting at 1's place and calculate the sum
-        //  Time Complexity: O(n) since we are only looping through the list once
-        //  Space Complexity: O(n) since we are only storing the input linkedList
+        //  Time Complexity: O(n)
+        //  Space Complexity: O(n) since we are storing the input linkedLists and their array conversions
         // We could solve this using less space without the arrays, but would require finding the length of both linkedLists first
         // extract linked lists into arrays in reverse order
         LinkedList.Node LL1Node = linkedListOne.head;
