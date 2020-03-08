@@ -1,6 +1,6 @@
-package Trees;
+package trees;
 
-import static Trees.Node.printTreeInOrderDFS;
+import static trees.Node.printTreeInOrderDFS;
 
 public class MinimalTree {
     // Problem: given a sorted (ascending) array with unique integer elements, write algorithm to create BST with minimal height
