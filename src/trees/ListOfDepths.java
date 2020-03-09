@@ -38,9 +38,9 @@ public class ListOfDepths {
 
     public static ArrayList<LinkedList> createLinkedListsFromTree(Node n) {
         ArrayList<LinkedList> linkedListArray = new ArrayList<>();
-        LinkedList linkedList = new LinkedList();
+        LinkedList linkedList;
         Queue<Node> currentQueue = new java.util.LinkedList<>();
-        Queue<Node> nextQueue = new java.util.LinkedList<>();
+        Queue<Node> nextQueue;
         currentQueue.add(n);
         LinkedList.Node previousNode = null, currentLinkedListNode = null;
         while (currentQueue.size() > 0) {
@@ -49,7 +49,6 @@ public class ListOfDepths {
             linkedListArray.add(linkedList);
             boolean isCurrentNodeHead = true;
             for(Node currentNode: currentQueue) {
-                System.out.println(currentNode.value);
                 currentLinkedListNode = linkedList.new Node(currentNode.value);
                 if(isCurrentNodeHead){ linkedList.head = currentLinkedListNode; isCurrentNodeHead = false; }
                 else { previousNode.next = currentLinkedListNode; }
