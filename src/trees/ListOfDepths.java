@@ -10,7 +10,8 @@ import static trees.Node.breadthFirstSearch;
 
 public class ListOfDepths {
     // Problem: Given a binary tree, design an algorithm which creates a linked list of all the nodes at each depth
-    // Solution: breadth first search with counter, add the LinkedList.Node equivalent of the current node to the
+    // Solution: Iterate through a list of nodes at the current layer, append their values to result linkedList & create nextNodeLayer list from their children--
+    //  which will be iterated through next via recursion
     //  corresponding depth LinkedList depending on the counter value
     // Time Complexity: O(n) since we are only looping through the tree once
     // Space Complexity: O(n) since the linked lists size is linearly related to the input tree
@@ -38,30 +39,25 @@ public class ListOfDepths {
     public static ArrayList<LinkedList> createLinkedListsFromTree(Node n) {
         ArrayList<LinkedList> linkedListArray = new ArrayList<>();
         LinkedList linkedList = new LinkedList();
-        Queue<Node> bfsQueue = new java.util.LinkedList<>();
-        bfsQueue.add(n);
-        int counter = 1, currentDepth = 0;
-        LinkedList.Node previousNode = null, currentLinkedListNode;
-        while (!bfsQueue.isEmpty()) {
-            Node currentNode = bfsQueue.remove();
-            if (currentNode.left != null) { bfsQueue.add(currentNode.left); }
-            if (currentNode.right != null) { bfsQueue.add(currentNode.right); }
-            // if the counter is equal to 1 or a power of 2, we know that we have reached a new depth layer of the tree
-            //  initialize new depth layer linkedList
-            if(isPowerOfTwo(counter) || counter == 1){
-                linkedList = new LinkedList();
-                linkedListArray.add(linkedList);
+        Queue<Node> currentQueue = new java.util.LinkedList<>();
+        Queue<Node> nextQueue = new java.util.LinkedList<>();
+        currentQueue.add(n);
+        LinkedList.Node previousNode = null, currentLinkedListNode = null;
+        while (currentQueue.size() > 0) {
+            linkedList = new LinkedList();
+            nextQueue = new java.util.LinkedList<>();
+            linkedListArray.add(linkedList);
+            boolean isCurrentNodeHead = true;
+            for(Node currentNode: currentQueue) {
+                System.out.println(currentNode.value);
                 currentLinkedListNode = linkedList.new Node(currentNode.value);
-                linkedList.head = currentLinkedListNode;
-                currentDepth++;
+                if(isCurrentNodeHead){ linkedList.head = currentLinkedListNode; isCurrentNodeHead = false; }
+                else { previousNode.next = currentLinkedListNode; }
+                if (currentNode.left != null) { nextQueue.add(currentNode.left); }
+                if (currentNode.right != null) { nextQueue.add(currentNode.right); }
+                previousNode = currentLinkedListNode;
             }
-            // if we haven't reached new layer of the tree, append current node to last node and continue
-            else {
-                currentLinkedListNode = linkedList.new Node(currentNode.value);
-                previousNode.next = currentLinkedListNode;
-            }
-            previousNode = currentLinkedListNode;
-            counter++;
+            currentQueue = nextQueue;
         }
         return linkedListArray;
     }
