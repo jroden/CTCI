@@ -5,7 +5,7 @@ public class ValidateBST {
     // Problem: Implement a function to check if a binary tree is a binary search tree
     // Solution: DFS search, if current number is smaller than previous then return false
     // Time Complexity: O(n) since we are only looping through the tree once
-    // Space Complexity: O(n) since the linked lists size is linearly related to the input tree
+    // Space Complexity: O(n) We are only storing the input tree
 
     public static void main(String[] args){
 //        dummy BST
