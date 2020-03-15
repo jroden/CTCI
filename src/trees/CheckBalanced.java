@@ -45,11 +45,7 @@ public class CheckBalanced {
 
     public static boolean isTreeBalanced(Node n) {
         // recurse through the tree, if lengths of left & right node differ by more than 1 return false
-        if(n != null) {
-//        System.out.println("left height: " + (getHeight(n.left) + 1));
-//        System.out.println("right height: " + (getHeight(n.right) + 1));
-        if(Math.abs(getHeight(n.left) - getHeight(n.right)) > 1){ System.out.println("returning false"); return false; }
-        }
+        if(n != null) { if(Math.abs(getHeight(n.left) - getHeight(n.right)) > 1){ return false;} }
         if(n.left != null){ return isTreeBalanced(n.left); }
         if(n.right != null){ return isTreeBalanced(n.right); }
         return true;
