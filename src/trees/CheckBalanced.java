@@ -50,7 +50,6 @@ public class CheckBalanced {
 //        System.out.println("right height: " + (getHeight(n.right) + 1));
         if(Math.abs(getHeight(n.left) - getHeight(n.right)) > 1){ System.out.println("returning false"); return false; }
         }
-        System.out.println("here");
         if(n.left != null){ return isTreeBalanced(n.left); }
         if(n.right != null){ return isTreeBalanced(n.right); }
         return true;
@@ -61,25 +60,4 @@ public class CheckBalanced {
         return Math.max(getHeight(n.left), getHeight(n.right)) + 1;
     }
 
-    // if each layer has 2* the number of nodes of the previous layer with 1 exception allowed
-    public static boolean areLayersBalanced(Node n){
-        boolean imbalanceEncountered = false;
-        Queue<Node> currentQueue = new java.util.LinkedList<>();
-        currentQueue.add(n);
-        while (currentQueue.size() > 0) {
-            Queue<Node> nextQueue = new java.util.LinkedList<>();
-            for(Node currentNode: currentQueue) {
-                if (currentNode.left != null) { nextQueue.add(currentNode.left); }
-                if (currentNode.right != null) { nextQueue.add(currentNode.right); }
-            }
-            // if the length of the next layer is greater than zero, but not equal to 2*n where n is the number of nodes at the previous layer,
-            //  we know that there is an imbalance.  Fail if there has been a previous imbalance
-            if(nextQueue.size() != currentQueue.size()*2 && nextQueue.size() > 0){
-                if(imbalanceEncountered){ return false; }
-                imbalanceEncountered = true;
-            }
-            currentQueue = nextQueue;
-        }
-        return true;
-    }
 }
