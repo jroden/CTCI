@@ -35,7 +35,6 @@ public class ValidateBST {
             if(previousVal == null){ return null;}
             else if(n.value < previousVal){ return null; }
             previousVal = isNodeBST(n.right, previousVal == null? null: n.value);
-            return previousVal == null? null: previousVal;
         }
         return previousVal;
     }
